@@ -3,9 +3,12 @@ import * as React from "react";
 import Link from "next/link";
 import { Auth } from "../common/auth";
 import { useAuth } from "@/hooks/use-auth";
+import { Button, Space } from "antd";
+import { useRouter } from "next/router";
 
 export function AdminLayout({ children }: LayoutProps) {
   const { profile, logout } = useAuth();
+  const router = useRouter();
 
   const handleLogout = async () => {
     try {
@@ -13,25 +16,25 @@ export function AdminLayout({ children }: LayoutProps) {
     } catch (err) {
       console.log(err);
     }
-  }
+  };
 
   return (
     <Auth>
       <h1>Admin Layout</h1>
       <div>Sidebar</div>
-
       <p>{JSON.stringify(profile, null, 4)}</p>
       &nbsp;
-      <button onClick={handleLogout}>Log out</button>
-
-      <Link href="/">
-        <a>Home</a>
-      </Link>
-
-      <Link href="/about">
-        <a>About</a>
-      </Link>
-
+      <Space>
+        <Button type="primary" onClick={() => router.push("/")}>
+          Home
+        </Button>
+        &nbsp;
+        <Button type="primary" danger onClick={() => router.push("/about")}>
+          About
+        </Button>
+        &nbsp;
+        <Button onClick={handleLogout}>Log out</Button>
+      </Space>
       <div>{children}</div>
     </Auth>
   );

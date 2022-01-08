@@ -2,17 +2,18 @@ import * as React from "react";
 import { authApi } from "@/api/index";
 import { useAuth } from "@/hooks/use-auth";
 import { useRouter } from "next/router";
+import { Button, Space } from "antd";
 
 function LoginPage() {
   const router = useRouter();
   const { login, logout, profile } = useAuth({
-    revalidateOnMount: true
+    revalidateOnMount: true,
   });
 
   const handleLoginClick = async () => {
     try {
       await login();
-      router.push('/about');
+      router.push("/about");
     } catch (err) {
       console.log(err);
     }
@@ -39,10 +40,17 @@ function LoginPage() {
       <h1>Login page</h1>
 
       <p>Profile: {JSON.stringify(profile || {}, null, 4)}</p>
-      <button onClick={handleLoginClick}>Login</button>
-      {/* <button onClick={handleGetProfileClick}>Get Profile</button> */}
-      <button onClick={handleLogoutClick}>Logout</button>
-      <button onClick={() => router.push('/about')}>Go to about</button>
+      <Space>
+        <Button type="primary" onClick={handleLoginClick}>
+          Login
+        </Button>
+        &nbsp;
+        <Button type="primary" danger onClick={handleLogoutClick}>
+          Logout
+        </Button>
+        &nbsp;
+        <Button onClick={() => router.push("/about")}>Go to about</Button>
+      </Space>
     </div>
   );
 }

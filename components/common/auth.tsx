@@ -1,7 +1,7 @@
 import { useAuth } from "@/hooks/use-auth";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
-
+import { Button } from 'antd';
 export interface AuthProps {
   children: any;
 }
@@ -16,7 +16,12 @@ export const Auth = ({ children }: AuthProps) => {
     }
   }, [isFirstLoading, profile?.username, router]);
 
-  if (!profile?.username) return <p>Loading...</p>;
+  if (!profile?.username)
+    return (
+      <Button type="primary" loading>
+        Loading
+      </Button>
+    );
 
   return <div>{children}</div>;
 };
