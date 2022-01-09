@@ -11,11 +11,14 @@ export const Auth = ({ children }: AuthProps) => {
   const { profile, isFirstLoading } = useAuth();
 
   useEffect(() => {
+    // @ts-ignore
     if (!isFirstLoading && !profile?.username) {
       router.push("/login");
     }
+  // @ts-ignore
   }, [isFirstLoading, profile?.username, router]);
 
+  // @ts-ignore
   if (!profile?.username)
     return (
       <Button type="primary" loading>

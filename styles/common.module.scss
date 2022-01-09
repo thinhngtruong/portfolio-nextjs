@@ -1,0 +1,26 @@
+.header,
+.footer {
+  text-align: center;
+}
+
+.main-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  position: relative;
+  margin: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 100%;
+
+  &-sm {
+    max-width: 680px;
+  }
+
+  &-md {
+    max-width: 860px;
+  }
+}

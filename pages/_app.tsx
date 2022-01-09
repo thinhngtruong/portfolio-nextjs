@@ -1,11 +1,9 @@
-import "../styles/globals.css";
-import type { AppProps } from "next/app";
-import { SWRConfig } from "swr";
 import axiosClient from "@/api/axios-client";
-import { AppPropsWithLayout } from '@/models/common'
-import { EmptyLayout } from '@/components/layout'
-
+import { EmptyLayout } from '@/components/layout';
+import { AppPropsWithLayout } from '@/models/common';
 import 'antd/dist/antd.css';
+import { SWRConfig } from "swr";
+import "@/styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   const Layout = Component.Layout ?? EmptyLayout;

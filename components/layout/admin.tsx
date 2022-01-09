@@ -1,7 +1,6 @@
-import { LayoutProps } from "@/models/index";
 import * as React from "react";
-import Link from "next/link";
-import { Auth } from "../common/auth";
+import { LayoutProps } from "@/models/index";
+import { Auth } from "../common";
 import { useAuth } from "@/hooks/use-auth";
 import { Button, Space } from "antd";
 import { useRouter } from "next/router";
