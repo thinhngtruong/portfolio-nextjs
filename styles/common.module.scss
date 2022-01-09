@@ -1,4 +1,23 @@
-.header,
+.header {
+  &-desktop {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &-link {
+    color: #000;
+    font-family: Heebo;
+    font-weight: 500;
+    font-size: 20px;
+    margin: 0 15px;
+  }
+
+  &-active {
+    color: #FF6464;
+  }
+
+}
+
 .footer {
   text-align: center;
 }
