@@ -1,5 +1,7 @@
+@import './variables.scss';
+
 .header {
-  &-desktop {
+  &-desktop, &-mobile {
     display: flex;
     justify-content: flex-end;
   }
@@ -15,7 +17,34 @@
   &-active {
     color: #FF6464;
   }
+}
 
+.header-desktop {
+  margin-top: 25px !important;
+}
+
+.header-mobile {
+  .menu {
+    margin-right: 3px;
+    margin-top: 20px;
+    font-size: 26px;
+  }
+}
+
+@media only screen and (min-width: $breakpointDesktop) {
+  .header-mobile {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: $breakpointMobile) {
+  .header-mobile {
+    display: flex;
+  }
+
+  .header-desktop {
+    display: none;
+  }
 }
 
 .footer {
@@ -29,17 +58,21 @@
 }
 
 .container {
-  position: relative;
-  margin: auto;
-  padding-right: 15px;
-  padding-left: 15px;
-  width: 100%;
-
   &-sm {
-    max-width: 680px;
+    max-width: 860px;
+    position: relative;
+    margin: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 100%;
   }
 
   &-md {
-    max-width: 860px;
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 100%;
   }
 }

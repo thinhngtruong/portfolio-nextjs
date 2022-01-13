@@ -1,0 +1,30 @@
+.hero-section-wrapper {
+  margin-top: 140px;
+  display: flex;
+  justify-content: space-between;
+
+  .hero-section {
+    width: 70%;
+
+    .description {
+      font-size: 16px;
+      line-height: 28px;
+      text-align: justify;
+      margin: 30px 0 10px;
+      
+      span {
+        will-change: transform;
+      }
+    }
+
+    .job-title {
+      color: #FF6464;
+      font-style: italic;
+    }
+  }
+
+  img {
+    border-radius: 100%;
+  }
+}
+

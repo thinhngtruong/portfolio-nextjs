@@ -16,8 +16,10 @@
     "cookies": "^0.8.0",
     "http-proxy": "^1.18.1",
     "next": "12.0.7",
+    "rc-queue-anim": "^2.0.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-simple-typewriter": "^3.0.1",
     "sass": "^1.47.0",
     "swr": "^1.1.2"
   },

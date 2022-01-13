@@ -15,11 +15,7 @@ const Header = (props: HeaderDesktopProps) => {
 
   return (
     <header
-      className={classnames(
-        styles["container"],
-        styles["container-sm"],
-        styles["header-desktop"]
-      )}
+      className={classnames(styles["container-md"], styles["header-desktop"])}
     >
       <Space>
         {ROUTE_LIST.map((route, index) => (
