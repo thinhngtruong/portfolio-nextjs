@@ -23,8 +23,15 @@
     }
   }
 
-  img {
-    border-radius: 100%;
+  .profile-img-wrapper {
+    box-shadow: -5px 13px rgb(0 0 0 / 8%);
+    color: #C3BDAC;
+    border-radius: 50%;
+    height: 237px;
+
+    img {
+      border-radius: 100%;
+    }
   }
 }
 

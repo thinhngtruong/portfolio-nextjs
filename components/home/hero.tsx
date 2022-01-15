@@ -56,7 +56,7 @@ export const HeroSection = (props: Props) => {
         </Button>
       </div>
 
-      <div>
+      <div className={styles['profile-img-wrapper']}>
         <Image src={Avatar} alt="avatar" width={240} height={240} />
       </div>
     </section>
