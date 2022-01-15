@@ -1,0 +1,76 @@
+.error-area {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1140px;
+  margin: auto;
+  text-align: center;
+  z-index: 1;
+  position: relative;
+
+  &:before {
+    bottom: 13px;
+    z-index: -1;
+    background: url('../images/404-bg-2.png') no-repeat scroll bottom;
+  }
+
+  &:after {
+    bottom: 5px;
+    z-index: -3;
+    background: url('../images/404-bg.png') no-repeat scroll bottom;
+  }
+
+  &:before, &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+  }
+
+  h3 {
+    margin-top: 80px;
+    font-size: 40px;
+    color: #4b5fa4;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+  }
+
+  p {
+    color: #4b5fa4;
+    line-height: 24px;
+    font-size: 16px;
+  }
+
+  a {
+    font-size: 16px;
+    font-family: Montserrat,sans-serif;
+    font-weight: 600;
+    color: #4b5fa4;
+    margin-bottom: 20px;
+    display: inline-block;
+    margin-top: 5px;
+  }
+  
+  h1 {
+    font-size: 250px;
+    font-weight: 700;
+    color: #6896ea;
+    margin-bottom: 0;
+    position: relative;
+    top: -30px;
+    z-index: -1;
+  }
+
+  span {
+    height: 150% !important;
+    position: absolute !important;
+    top: -95px;
+    left: 8px !important;
+    width: 100% !important;
+    z-index: -1 !important;
+  }
+}

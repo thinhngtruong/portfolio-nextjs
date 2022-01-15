@@ -20,7 +20,7 @@ export const HeroSection = (props: Props) => {
     <section className={styles["hero-section-wrapper"]}>
       <div className={styles["hero-section"]}>
         <Title level={1}>
-          {text} <Cursor />
+          {text} <Cursor cursorStyle="_" />
         </Title>
         <QueueAnim type={"right"} delay={200} duration={700}>
           <div key="0">
@@ -56,7 +56,7 @@ export const HeroSection = (props: Props) => {
         </Button>
       </div>
 
-      <div className={styles['profile-img-wrapper']}>
+      <div className={styles["profile-img-wrapper"]}>
         <Image src={Avatar} alt="avatar" width={240} height={240} />
       </div>
     </section>
