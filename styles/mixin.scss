@@ -1,113 +1,135 @@
 @mixin prefixer($property, $value, $prefixes) {
-	@each $prefix in $prefixes {
-		@if $prefix == webkit {
-			-webkit-#{$property}: $value;
-		} @else if $prefix == moz {
-			-moz-#{$property}: $value;
-		} @else if $prefix == ms {
-			-ms-#{$property}: $value;
-		} @else if $prefix == o {
-			-o-#{$property}: $value;
-		} @else if $prefix == spec {
-			#{$property}: $value;
-		} @else {
-			@warn "Unrecognized prefix: #{$prefix}";
-		}
-	}
+  @each $prefix in $prefixes {
+    @if $prefix == webkit {
+      -webkit-#{$property}: $value;
+    } @else if $prefix == moz {
+      -moz-#{$property}: $value;
+    } @else if $prefix == ms {
+      -ms-#{$property}: $value;
+    } @else if $prefix == o {
+      -o-#{$property}: $value;
+    } @else if $prefix == spec {
+      #{$property}: $value;
+    } @else {
+      @warn "Unrecognized prefix: #{$prefix}";
+    }
+  }
 }
 
 /* Transform */
 @mixin transform($transform) {
-	@include prefixer(transform, $transform, ms webkit spec);
+  @include prefixer(transform, $transform, ms webkit spec);
 }
 
 /* Border Radius */
 @mixin border-radius($radius) {
-	@include prefixer(border-radius, $radius, moz webkit spec);
+  @include prefixer(border-radius, $radius, moz webkit spec);
 }
 
 /* Single side border-radius */
 
 @mixin border-radius-top($radius) {
-	-webkit-border-top-left-radius: $radius;
-	-webkit-border-top-right-radius: $radius;
-	-moz-border-radius-topleft: $radius;
-	-moz-border-radius-topright: $radius;
-	border-top-left-radius: $radius;
-	border-top-right-radius: $radius;
+  -webkit-border-top-left-radius: $radius;
+  -webkit-border-top-right-radius: $radius;
+  -moz-border-radius-topleft: $radius;
+  -moz-border-radius-topright: $radius;
+  border-top-left-radius: $radius;
+  border-top-right-radius: $radius;
 }
 
 @mixin border-radius-right($radius) {
-	-webkit-border-top-right-radius: $radius;
-	-webkit-border-bottom-right-radius: $radius;
-	-moz-border-radius-topright: $radius;
-	-moz-border-radius-bottomright: $radius;
-	border-top-right-radius: $radius;
-	border-bottom-right-radius: $radius;
+  -webkit-border-top-right-radius: $radius;
+  -webkit-border-bottom-right-radius: $radius;
+  -moz-border-radius-topright: $radius;
+  -moz-border-radius-bottomright: $radius;
+  border-top-right-radius: $radius;
+  border-bottom-right-radius: $radius;
 }
 
 @mixin border-radius-bottom($radius) {
-	-webkit-border-bottom-right-radius: $radius;
-	-webkit-border-bottom-left-radius: $radius;
-	-moz-border-radius-bottomright: $radius;
-	-moz-border-radius-bottomleft: $radius;
-	border-bottom-right-radius: $radius;
-	border-bottom-left-radius: $radius;
+  -webkit-border-bottom-right-radius: $radius;
+  -webkit-border-bottom-left-radius: $radius;
+  -moz-border-radius-bottomright: $radius;
+  -moz-border-radius-bottomleft: $radius;
+  border-bottom-right-radius: $radius;
+  border-bottom-left-radius: $radius;
 }
 
 @mixin border-radius-left($radius) {
-	-webkit-border-top-left-radius: $radius;
-	-webkit-border-bottom-left-radius: $radius;
-	-moz-border-radius-topleft: $radius;
-	-moz-border-radius-bottomleft: $radius;
-	border-top-left-radius: $radius;
-	border-bottom-left-radius: $radius;
+  -webkit-border-top-left-radius: $radius;
+  -webkit-border-bottom-left-radius: $radius;
+  -moz-border-radius-topleft: $radius;
+  -moz-border-radius-bottomleft: $radius;
+  border-top-left-radius: $radius;
+  border-bottom-left-radius: $radius;
 }
 
 @mixin border-radius-top-left($radius) {
-	-webkit-border-top-left-radius: $radius;
-	-moz-border-radius-topleft: $radius;
-	border-top-left-radius: $radius;
+  -webkit-border-top-left-radius: $radius;
+  -moz-border-radius-topleft: $radius;
+  border-top-left-radius: $radius;
 }
 
 @mixin border-radius-top-right($radius) {
-	-webkit-border-top-right-radius: $radius;
-	-moz-border-radius-topright: $radius;
-	border-top-right-radius: $radius;
+  -webkit-border-top-right-radius: $radius;
+  -moz-border-radius-topright: $radius;
+  border-top-right-radius: $radius;
 }
 
 @mixin border-radius-bottom-left($radius) {
-	-webkit-border-bottom-left-radius: $radius;
-	-moz-border-radius-bottomleft: $radius;
-	border-bottom-left-radius: $radius;
+  -webkit-border-bottom-left-radius: $radius;
+  -moz-border-radius-bottomleft: $radius;
+  border-bottom-left-radius: $radius;
 }
 
 @mixin border-radius-bottom-right($radius) {
-	-webkit-border-bottom-right-radius: $radius;
-	-moz-border-radius-bottomright: $radius;
-	border-bottom-right-radius: $radius;
+  -webkit-border-bottom-right-radius: $radius;
+  -moz-border-radius-bottomright: $radius;
+  border-bottom-right-radius: $radius;
 }
-
 
 /* box shadow */
 @mixin box-shadow($box-shadow) {
-	@include prefixer(box-shadow, $box-shadow, ms webkit spec);
+  @include prefixer(box-shadow, $box-shadow, ms webkit spec);
 }
 
 /* transition */
 @mixin transition($transition) {
-	@include prefixer(transition, $transition, moz ms o webkit spec);
+  @include prefixer(transition, $transition, moz ms o webkit spec);
 }
 
 /* Opacity */
 @mixin opacity($opacity, $important: false) {
-	opacity: $opacity if($important, !important, null);
-	// IE8 filter
-	$opacity-ie: ($opacity * 100);
-	filter: alpha(opacity=$opacity-ie) if($important, !important, null);
+  opacity: $opacity if($important, !important, null);
+  // IE8 filter
+  $opacity-ie: ($opacity * 100);
+  filter: alpha(opacity=$opacity-ie) if($important, !important, null);
 }
 
 /* box-sizing */
 @mixin box-sizing($box-sizing) {
-	@include prefixer(box-sizing, $box-sizing, ms webkit spec);
+  @include prefixer(box-sizing, $box-sizing, ms webkit spec);
+}
+
+@mixin round-btn($width: 42px, $height: 42px, $font-size: 14px) {
+  width: $width;
+  height: $height;
+  font-size: $font-size;
+  background: #000 !important;
+  line-height: 43px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  text-align: center;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 2px 35px 0 rgb(4 12 44 / 50%);
+    color: #fff;
+    -webkit-transform: translateY(-4px);
+    transform: translateY(-4px);
+  }
 }

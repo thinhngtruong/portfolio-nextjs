@@ -24,7 +24,7 @@ const Header = (props: HeaderDesktopProps) => {
           <Image src={Logo} alt="Logo" width={50} height={30} />
         </a>
       </Link>
-      <Space>
+      <Space className={styles['header-link-wrapper']}>
         {ROUTE_LIST.map((route, index) => (
           <Link key={route.path + index} href={route.path} passHref>
             <a

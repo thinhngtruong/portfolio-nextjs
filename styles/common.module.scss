@@ -1,10 +1,25 @@
 @import "./variables.scss";
+@import "./mixin.scss";
 
 .header {
   &-desktop,
   &-mobile {
     display: flex;
     justify-content: space-between;
+  }
+
+  &-link-wrapper {
+    div {
+      transition: all 0.5s ease;
+
+      &:hover {
+        background: #ddd !important;
+
+        & > a {
+          color: #000;
+        }
+      }
+    }
   }
 
   &-link {
@@ -84,6 +99,17 @@
     padding-right: 15px;
     padding-left: 15px;
     width: 100%;
+  }
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 10%;
+  right: 30px;
+
+  @include round-btn(42px, 42px, 20px);
+  &:hover {
+    opacity: 0.6;
   }
 }
 
