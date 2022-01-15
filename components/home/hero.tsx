@@ -33,7 +33,7 @@ export const HeroSection = (props: Props) => {
           <div key="0">
             <Title
               level={1}
-              style={{ marginTop: 0, textAlign: isMobile ? "center" : "" }}
+              style={{ marginTop: 0, textAlign: isMobile ? "center" : "left" }}
             >
               Software Engineer
             </Title>
