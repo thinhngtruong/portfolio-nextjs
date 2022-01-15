@@ -1,10 +1,17 @@
 import styles from "@/styles/home.module.scss";
 import { Button, Typography } from "antd";
-import { DownloadOutlined } from "@ant-design/icons";
+import {
+  DownloadOutlined,
+  GoogleOutlined,
+  GithubOutlined,
+} from "@ant-design/icons";
 import Image from "next/image";
 import Avatar from "@/images/avatar.jpeg";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import QueueAnim from "rc-queue-anim";
+import Link from "next/link";
+import { FacebookIcon, LinkedinIcon } from "../svg";
+import { isMobile } from "react-device-detect";
 
 const { Text, Title } = Typography;
 
@@ -12,7 +19,7 @@ interface Props {}
 
 export const HeroSection = (props: Props) => {
   const { text } = useTypewriter({
-    words: ["Hello, I am Thinh Nguyen,"],
+    words: isMobile ? ["Hello, I'm Thinh,"] : ["Hello, I am Thinh Nguyen,"],
     typeSpeed: 80,
   });
 
@@ -24,14 +31,17 @@ export const HeroSection = (props: Props) => {
         </Title>
         <QueueAnim type={"right"} delay={200} duration={700}>
           <div key="0">
-            <Title level={1} style={{ marginTop: 0 }}>
+            <Title
+              level={1}
+              style={{ marginTop: 0, textAlign: isMobile ? "center" : "" }}
+            >
               Software Engineer
             </Title>
           </div>
         </QueueAnim>
         <div className={styles.description}>
           <QueueAnim type={"right"} delay={200} duration={700}>
-            <div key="1">
+            <p key="1">
               <Text>
                 As a dynamic, enthusiastic developer with high flexibility to
                 adapt to the new working environment, I am seeking opportunities
@@ -41,23 +51,54 @@ export const HeroSection = (props: Props) => {
                 <b>Bachelor of Computer Engineering</b> from{" "}
                 <b>University of Science.</b>
               </Text>
-            </div>
-            <div key="2">
+            </p>
+            <p key="2">
               <Text className={styles["job-title"]}>
                 {" "}
                 A Front-end Developer with over 3 years of experience.
               </Text>
-            </div>
+            </p>
           </QueueAnim>
         </div>
-        <br />
-        <Button size="large" icon={<DownloadOutlined />}>
-          Download My Resume
-        </Button>
+        <div className={styles["download-cv-btn"]}>
+          <Button size="large" icon={<DownloadOutlined />}>
+            Download My CV
+          </Button>
+        </div>
       </div>
 
       <div className={styles["profile-img-wrapper"]}>
         <Image src={Avatar} alt="avatar" width={240} height={240} />
+        <ul className={styles["list-icon"]}>
+          <li>
+            <Link href="https://facebook.com/nguyen.tr.thinh">
+              <a>
+                <FacebookIcon />
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link href="https://linkedin.com/in/thinhngtruong">
+              <a>
+                <LinkedinIcon />
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link href="mailto:thinh.ngtruong@gmail.com">
+              <a>
+                <GoogleOutlined />
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link href="https://github.com/thinhngtruong">
+              <a>
+                <GithubOutlined />
+              </a>
+            </Link>
+          </li>
+        </ul>
       </div>
     </section>
   );

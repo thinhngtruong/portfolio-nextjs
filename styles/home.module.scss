@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 .hero-section-wrapper {
   margin-top: 140px;
   display: flex;
@@ -11,27 +13,96 @@
       line-height: 28px;
       text-align: justify;
       margin: 30px 0 10px;
-      
+
       span {
         will-change: transform;
       }
     }
 
     .job-title {
-      color: #FF6464;
+      color: #ff6464;
       font-style: italic;
+    }
+
+    .download-cv-btn {
+      margin-top: 15px;
     }
   }
 
   .profile-img-wrapper {
     box-shadow: -5px 13px rgb(0 0 0 / 8%);
-    color: #C3BDAC;
+    color: #c3bdac;
     border-radius: 50%;
     height: 237px;
 
     img {
       border-radius: 100%;
+      border: 4px dashed transparent !important;
+
+      &:hover {
+        opacity: 0.9;
+        border-color: #FF6464 !important;
+      }
+    }
+
+    .list-icon {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      margin-top: 25px;
+      justify-content: center;
+
+      li {
+        margin: 0 3px;
+        a {
+          background: #000 !important;
+          font-size: 14px;
+          width: 42px;
+          height: 42px;
+          line-height: 43px;
+          border-radius: 50%;
+          background: rgba(0, 0, 0, 0.3);
+          display: inline-block;
+          color: #fff;
+          -webkit-transition: all 0.3s linear;
+          transition: all 0.3s linear;
+          text-align: center;
+
+          &:hover {
+            box-shadow: 0 2px 35px 0 rgb(4 12 44 / 50%);
+            color: #fff;
+            -webkit-transform: translateY(-4px);
+            transform: translateY(-4px);
+          }
+        }
+      }
     }
   }
 }
 
+@media only screen and (max-width: $breakpointMobile) {
+  .hero-section-wrapper {
+    margin-top: 50px;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .hero-section {
+    margin-top: 100px;
+    width: 80% !important;
+
+    h1 {
+      font-size: 36px;
+    }
+  }
+
+  .list-icon { 
+    margin-top: 15px !important;
+  }
+
+  .download-cv-btn {
+    margin-top: 5px !important;
+    text-align: center;
+  }
+}

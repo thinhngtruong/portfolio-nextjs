@@ -37,16 +37,6 @@
   }
 }
 
-@media only screen and (max-width: $breakpointMobile) {
-  .header-mobile {
-    display: flex;
-  }
-
-  .header-desktop {
-    display: none;
-  }
-}
-
 .footer {
   text-align: center;
 }
@@ -55,6 +45,11 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+.main-bg {
+  position:absolute;
+  top: 100px;
 }
 
 .container {
@@ -74,5 +69,20 @@
     padding-right: 15px;
     padding-left: 15px;
     width: 100%;
+  }
+}
+
+@media only screen and (max-width: $breakpointMobile) {
+  .header-mobile {
+    display: flex;
+  }
+
+  .header-desktop {
+    display: none;
+  }
+
+  .main-bg {
+    top: 500px;
+    left: -170px;
   }
 }

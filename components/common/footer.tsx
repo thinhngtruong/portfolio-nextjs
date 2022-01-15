@@ -11,7 +11,7 @@ interface FooterProps {
 export const Footer = (props: FooterProps) => {
   return (
     <footer className={styles.footer}>
-      <Title>Footer</Title>
+      {/* <Title>Footer</Title> */}
     </footer>
   )
 }
