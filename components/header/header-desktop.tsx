@@ -5,6 +5,8 @@ import Link from "next/link";
 import { ROUTE_LIST } from "./routes";
 import classnames from "classnames";
 import { useRouter } from "next/router";
+import Image from "next/image";
+import Logo from "@/images/logo.png";
 
 const { Title } = Typography;
 
@@ -17,6 +19,11 @@ const Header = (props: HeaderDesktopProps) => {
     <header
       className={classnames(styles["container-md"], styles["header-desktop"])}
     >
+      <Link href="/">
+        <a>
+          <Image src={Logo} alt="Logo" width={50} height={30} />
+        </a>
+      </Link>
       <Space>
         {ROUTE_LIST.map((route, index) => (
           <Link key={route.path + index} href={route.path} passHref>

@@ -1,10 +1,18 @@
+import { HeroSection } from "@/components/home";
 import { MainLayout } from "@/components/layout";
 import { NextPageWithLayout } from "@/models/common";
-import { HeroSection } from "@/components/home";
-import { Space } from "antd";
+import Head from "next/head";
 
 const HomePage: NextPageWithLayout = () => {
-  return <HeroSection />;
+  return (
+    <>
+      <Head>
+        {" "}
+        <title>{`Thinh Nguyen's Portfolio`}</title>
+      </Head>
+      <HeroSection />
+    </>
+  );
 };
 
 export default HomePage;

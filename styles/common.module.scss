@@ -1,9 +1,10 @@
-@import './variables.scss';
+@import "./variables.scss";
 
 .header {
-  &-desktop, &-mobile {
+  &-desktop,
+  &-mobile {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
   }
 
   &-link {
@@ -15,7 +16,7 @@
   }
 
   &-active {
-    color: #FF6464;
+    color: #ff6464;
   }
 }
 
@@ -38,7 +39,11 @@
 }
 
 .footer {
+  margin-top: 50px;
   text-align: center;
+  padding: 10px 0;
+  background: #edecf0;
+  font-size: 13px;
 }
 
 .main-wrapper {
@@ -47,9 +52,19 @@
   flex-direction: column;
 }
 
+.main-bg,
+.main-bg-3 {
+  position: absolute;
+}
+
 .main-bg {
-  position:absolute;
   top: 100px;
+}
+
+.main-bg-3 {
+  top: 0;
+  right: 0;
+  z-index: -1;
 }
 
 .container {
@@ -75,6 +90,10 @@
 @media only screen and (max-width: $breakpointMobile) {
   .header-mobile {
     display: flex;
+
+    & > a {
+      margin-top: 20px !important;
+    }
   }
 
   .header-desktop {
