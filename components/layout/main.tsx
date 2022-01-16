@@ -12,7 +12,6 @@ export function MainLayout({ children }: LayoutProps) {
 
   const toggleVisible = () => {
     const scrolled = document.documentElement.scrollTop;
-    console.log(scrolled);
     if (scrolled > 300) {
       setBackToTop(true);
     } else if (scrolled <= 300) {

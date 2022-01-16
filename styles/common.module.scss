@@ -31,12 +31,46 @@
   }
 
   &-active {
-    color: #ff6464;
+    color: $red;
   }
+}
+
+.header-title {
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
 }
 
 .header-desktop {
   margin-top: 25px !important;
+
+  a > div {
+    &:before {
+      background: #000;
+      content: "";
+      opacity: 0.71;
+      position: absolute;
+      left: auto;
+      right: 0;
+      bottom: 0;
+      width: 0;
+      height: 1.3px;
+      z-index: 1;
+      -webkit-transition: all 0.4s ease-in-out;
+      transition: all 0.4s ease-in-out;
+    }
+
+    &:hover {
+      &:before {
+        width: 100%;
+        left: 0;
+      }
+    }
+  }
+
+  a:hover {
+    color: $red;
+  }
 }
 
 .header-mobile {

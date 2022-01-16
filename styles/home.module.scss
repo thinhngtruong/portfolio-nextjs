@@ -21,7 +21,7 @@
     }
 
     .job-title {
-      color: #ff6464;
+      color: $red;
       font-style: italic;
     }
 
@@ -71,7 +71,7 @@
   }
 
   .hero-section {
-    margin-top: 100px;
+    margin-top: 90px;
     width: 80% !important;
 
     h1 {
