@@ -9,8 +9,8 @@ export default class MyDocument extends Document {
           <meta name="title" content="Thinh Nguyen | Portfolio" />
           <meta
             name="description"
-            content="As a dynamic, enthusiastic developer with high flexibility to adapt to the new working environment, I am seeking opportunities to improve myself and contribute to the company.
-Strong engineering professional with a Bachelor of Computer Engineering from University of Science. A Front-end Developer with over 3 years of experience."
+            content="About
+            I have a huge passion on state-of-the-art technology and people communication. I am on my way with energy of youth, great resilience, and professional attitude. A Front-end Developer with over 3 years of experience."
           />
           <meta property="og:image" content="https://iili.io/l3hcX9.png" />
           <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />

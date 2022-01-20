@@ -43,9 +43,9 @@ export const HeroSection = (props: Props) => {
           <QueueAnim type={"right"} delay={200} duration={700}>
             <p key="1">
               <Text>
-                As a dynamic, enthusiastic developer with high flexibility to
-                adapt to the new working environment, I am seeking opportunities
-                to improve myself and contribute to the company.
+                {`I have a huge passion on state-of-the-art technology and
+                people communication. I'm on my way with energy of youth, great
+                resilience, and professional attitude.`}
                 <br />
                 Strong engineering professional with a{" "}
                 <b>Bachelor of Computer Engineering</b> from{" "}
