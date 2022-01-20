@@ -7,8 +7,7 @@ const HomePage: NextPageWithLayout = () => {
   return (
     <>
       <Head>
-        {" "}
-        <title>{`Thinh Nguyen's Portfolio`}</title>
+        <title>Thinh Nguyen | Portfolio</title>
       </Head>
       <HeroSection />
     </>

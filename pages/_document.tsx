@@ -6,8 +6,14 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <meta name="description" content="Thinh Nguyen's Portfolio" />
-					<link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
+          <meta name="title" content="Thinh Nguyen | Portfolio" />
+          <meta
+            name="description"
+            content="As a dynamic, enthusiastic developer with high flexibility to adapt to the new working environment, I am seeking opportunities to improve myself and contribute to the company.
+Strong engineering professional with a Bachelor of Computer Engineering from University of Science. A Front-end Developer with over 3 years of experience."
+          />
+          <meta property="og:image" content="https://iili.io/l3hcX9.png" />
+          <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
