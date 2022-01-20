@@ -4,7 +4,7 @@ import { Typography } from "antd";
 import classnames from "classnames";
 import Link from "next/link";
 import Image from "next/image";
-import Logo from '@/images/logo.png';
+import Logo from "@/images/logo.png";
 import Texty from "rc-texty";
 import { useIntervalTitle } from "@/hooks/use-interval-title";
 
@@ -22,7 +22,7 @@ const Header = (props: HeaderMobileProps) => {
       <Link href="/">
         <a>
           {/* <Image src={Logo} alt="Logo" width={50} height={30} /> */}
-          <Texty
+          {/* <Texty
             type="scaleX"
             mode="smooth"
             className={styles["header-title"]}
@@ -30,7 +30,10 @@ const Header = (props: HeaderMobileProps) => {
             interval={250}
           >
             {showTitle ? "Thinh Nguyen" : ""}
-          </Texty>
+          </Texty> */}
+          <span>Thinh</span>
+          {" "}
+          <span>Nguyen</span>
         </a>
       </Link>
       <MenuOutlined className={styles.menu} />

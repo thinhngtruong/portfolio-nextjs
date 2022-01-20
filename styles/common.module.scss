@@ -41,10 +41,19 @@
   text-transform: uppercase;
 }
 
-.header-desktop {
+.header-desktop, .header-mobile {
   margin-top: 25px !important;
 
-  a > div {
+  > a {
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+    position: relative;
+
+    > span:first-child {
+      color: #ff6464;
+    }
+
     &:before {
       background: #000;
       content: "";

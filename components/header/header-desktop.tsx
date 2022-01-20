@@ -16,9 +16,7 @@ export interface HeaderDesktopProps {}
 
 const Header = (props: HeaderDesktopProps) => {
   const router = useRouter();
-  const { showTitle } = useIntervalTitle();
-
-  // console.log(showTitle)
+  // const { showTitle } = useIntervalTitle();
 
   return (
     <header
@@ -27,7 +25,7 @@ const Header = (props: HeaderDesktopProps) => {
       <Link href="/">
         <a>
           {/* <Image src={Logo} alt="Logo" width={50} height={30} /> */}
-          <Texty
+          {/* <Texty
             type="scaleX"
             mode="smooth"
             className={styles["header-title"]}
@@ -35,7 +33,10 @@ const Header = (props: HeaderDesktopProps) => {
             interval={250}
           >
             {showTitle ? "Thinh Nguyen" : ""}
-          </Texty>
+          </Texty> */}
+          <span>Thinh</span>
+          {" "}
+          <span>Nguyen</span>
         </a>
       </Link>
       <Space className={styles["header-link-wrapper"]}>
