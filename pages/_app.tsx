@@ -4,7 +4,6 @@ import { AppPropsWithLayout } from '@/models/common';
 import 'antd/dist/antd.css';
 import { SWRConfig } from "swr";
 import "@/styles/globals.css";
-import 'rc-texty/assets/index.css';
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   const Layout = Component.Layout ?? EmptyLayout;

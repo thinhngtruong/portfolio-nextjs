@@ -1,17 +1,17 @@
+import Avatar from "@/images/avatar.jpeg";
 import styles from "@/styles/home.module.scss";
-import { Button, Typography } from "antd";
 import {
   DownloadOutlined,
-  GoogleOutlined,
   GithubOutlined,
+  GoogleOutlined,
 } from "@ant-design/icons";
+import { Button, Typography } from "antd";
 import Image from "next/image";
-import Avatar from "@/images/avatar.jpeg";
-import { useTypewriter, Cursor } from "react-simple-typewriter";
-import QueueAnim from "rc-queue-anim";
 import Link from "next/link";
-import { FacebookIcon, LinkedinIcon } from "../svg";
 import { isMobile } from "react-device-detect";
+import { Cursor, useTypewriter } from "react-simple-typewriter";
+import { FacebookIcon, LinkedinIcon } from "../svg";
+import { Fade, JackInTheBox } from "react-awesome-reveal";
 
 const { Text, Title } = Typography;
 
@@ -29,41 +29,37 @@ export const HeroSection = (props: Props) => {
         <Title level={1}>
           {text} <Cursor cursorStyle="_" />
         </Title>
-        <QueueAnim type={"right"} delay={200} duration={700}>
-          <div key="0">
-            <Title
-              level={1}
-              style={{ marginTop: 0, textAlign: isMobile ? "center" : "left" }}
-            >
-              Software Engineer
-            </Title>
-          </div>
-        </QueueAnim>
+        <JackInTheBox delay={300}>
+          <Title
+            level={1}
+            style={{ marginTop: 0, textAlign: isMobile ? "center" : "left" }}
+          >
+            Software Engineer
+          </Title>
+        </JackInTheBox>
         <div className={styles.description}>
-          <QueueAnim type={"right"} delay={200} duration={700}>
-            <p key="1">
-              <Text>
-                {`I have a huge passion on state-of-the-art technology and
+          <Fade delay={700}>
+            <Text>
+              {`I have a huge passion on state-of-the-art technology and
                 people communication. I'm on my way with energy of youth, great
                 resilience, and professional attitude.`}
-                <br />
-                Strong engineering professional with a{" "}
-                <b>Bachelor of Computer Engineering</b> from{" "}
-                <b>University of Science.</b>
-              </Text>
-            </p>
-            <p key="2">
-              <Text className={styles["job-title"]}>
-                {" "}
-                A Front-end Developer with over 3 years of experience.
-              </Text>
-            </p>
-          </QueueAnim>
+              <br />
+              Strong engineering professional with a{" "}
+              <b>Bachelor of Computer Engineering</b> from{" "}
+              <b>University of Science.</b>
+            </Text>
+            <Text className={styles["job-title"]}>
+              {" "}
+              A Front-end Developer with over 3 years of experience.
+            </Text>
+          </Fade>
         </div>
         <div className={styles["download-cv-btn"]}>
-          <Button size="large" icon={<DownloadOutlined />}>
-            Download My CV
-          </Button>
+          <Fade delay={1000}>
+            <Button size="large" icon={<DownloadOutlined />}>
+              Download My CV
+            </Button>
+          </Fade>
         </div>
       </div>
 

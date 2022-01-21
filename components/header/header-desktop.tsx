@@ -1,22 +1,14 @@
-import React from "react";
-import { Typography, Space } from "antd";
 import styles from "@/styles/common.module.scss";
-import Link from "next/link";
-import { ROUTE_LIST } from "./routes";
+import { Space } from "antd";
 import classnames from "classnames";
+import Link from "next/link";
 import { useRouter } from "next/router";
-import Image from "next/image";
-import Logo from "@/images/logo.png";
-import Texty from "rc-texty";
-import { useIntervalTitle } from "@/hooks/use-interval-title";
-
-const { Title } = Typography;
+import { ROUTE_LIST } from "./routes";
 
 export interface HeaderDesktopProps {}
 
 const Header = (props: HeaderDesktopProps) => {
   const router = useRouter();
-  // const { showTitle } = useIntervalTitle();
 
   return (
     <header
@@ -24,16 +16,6 @@ const Header = (props: HeaderDesktopProps) => {
     >
       <Link href="/">
         <a>
-          {/* <Image src={Logo} alt="Logo" width={50} height={30} /> */}
-          {/* <Texty
-            type="scaleX"
-            mode="smooth"
-            className={styles["header-title"]}
-            delay={600}
-            interval={250}
-          >
-            {showTitle ? "Thinh Nguyen" : ""}
-          </Texty> */}
           <span>Thinh</span>
           {" "}
           <span>Nguyen</span>

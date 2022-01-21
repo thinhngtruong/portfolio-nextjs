@@ -39,6 +39,9 @@
       ],
       "@/images/*": [
         "./images/*"
+      ],
+      "@/assets/*": [
+        "./assets/*"
       ]
     },
   },
