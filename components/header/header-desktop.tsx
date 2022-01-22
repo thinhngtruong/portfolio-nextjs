@@ -1,25 +1,18 @@
-import { useContext } from "react";
+import { Moon, Sun } from "@/components/icons";
 import styles from "@/styles/common.module.scss";
 import { Space } from "antd";
 import classnames from "classnames";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { ROUTE_LIST } from "./routes";
-import { Moon, Sun } from "@/components/icons";
-import { ThemeContext } from "@/components/context";
-import { LIGHT_MODE, DARK_MODE } from "@/constants/index";
 
-export interface HeaderDesktopProps {}
+export interface HeaderDesktopProps {
+  isDarkMode: boolean;
+  handleChangeThemeStyle: () => void;
+}
 
-const Header = (props: HeaderDesktopProps) => {
+const Header = ({ isDarkMode, handleChangeThemeStyle }: HeaderDesktopProps) => {
   const router = useRouter();
-  const theme = useContext(ThemeContext);
-
-  const { isDarkMode } = theme.state;
-
-  const handleChangeThemeStyle = () => {
-    theme.dispatch({ type: isDarkMode ? LIGHT_MODE : DARK_MODE });
-  };
 
   return (
     <header
@@ -33,6 +26,7 @@ const Header = (props: HeaderDesktopProps) => {
       <Space className={styles["header-link-wrapper"]}>
         <div className={styles["theme-style-wrapper"]}>
           <input
+            checked={isDarkMode ? true : false}
             type="checkbox"
             className={styles["theme-style-cb"]}
             id="checkbox"

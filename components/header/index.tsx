@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import HeaderMobile from "./header-mobile";
 import HeaderDesktop from "./header-desktop";
 import styles from "@/styles/common.module.scss";
 import Particles from "react-tsparticles";
+import { AppContext } from "@/components/context";
+import { LIGHT_MODE, DARK_MODE } from "@/constants/index";
 
 interface HeaderProps {}
 
 export const Header = (props: HeaderProps) => {
+  const theme = useContext(AppContext);
+
+  const { isDarkMode } = theme.state;
+
+  const handleChangeThemeStyle = () => {
+    theme.dispatch({ type: isDarkMode ? LIGHT_MODE : DARK_MODE });
+  };
+
   return (
     <div className={styles["header-wrapper"]}>
       <div className={styles["particles-wrapper"]}>
@@ -52,13 +62,13 @@ export const Header = (props: HeaderProps) => {
             },
             particles: {
               color: {
-                value: "#000",
+                value: isDarkMode ? "fff" : "#000",
               },
               links: {
-                color: "#000",
+                color: isDarkMode ? "fff" : "#000",
                 distance: 100,
                 enable: true,
-                opacity: 0.3,
+                opacity: isDarkMode ? 1 : 0.3,
                 width: 1,
               },
               collisions: {
@@ -95,7 +105,10 @@ export const Header = (props: HeaderProps) => {
         />
       </div>
       <HeaderMobile />
-      <HeaderDesktop />
+      <HeaderDesktop
+        handleChangeThemeStyle={handleChangeThemeStyle}
+        isDarkMode={isDarkMode}
+      />
     </div>
   );
 };

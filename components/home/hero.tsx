@@ -10,7 +10,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { isMobile } from "react-device-detect";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
-import { FacebookIcon, LinkedinIcon } from "../svg";
+import { FacebookIcon, LinkedinIcon } from "@/components/icons";
 import { Fade, JackInTheBox, Slide } from "react-awesome-reveal";
 import { ConditionalWrapper } from "@/components/common";
 

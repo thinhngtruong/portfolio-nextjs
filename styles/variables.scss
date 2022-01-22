@@ -1,6 +1,14 @@
-$breakpointMobile: '767px';
-$breakpointDesktop: '1200px';
-$breakpointTabletMin: '768px';
-$breakpointTabletMax: '1199px';
+$breakpointMobile: "767px";
+$breakpointDesktop: "1200px";
+$breakpointTabletMin: "768px";
+$breakpointTabletMax: "1199px";
 
 $red: #ff6464;
+$black: #000;
+$lighter_black: #212121;
+$white: #fff;
+$gray: #edecf0;
+$background-light: $white;
+$background-dark: $lighter_black;
+$primary-text-light: $black;
+$primary-text-dark: $white;

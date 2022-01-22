@@ -100,3 +100,13 @@
     text-align: center;
   }
 }
+
+.dark-mode {
+  .download-cv-btn span{
+    color: $primary-text-light !important;
+  }
+
+  .list-icon li a:hover {
+    box-shadow: 0 2px 35px 0 rgb(255 255 255 / 50%) !important;
+  }
+}
