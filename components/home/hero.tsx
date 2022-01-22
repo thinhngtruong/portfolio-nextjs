@@ -11,7 +11,8 @@ import Link from "next/link";
 import { isMobile } from "react-device-detect";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import { FacebookIcon, LinkedinIcon } from "../svg";
-import { Fade, JackInTheBox } from "react-awesome-reveal";
+import { Fade, JackInTheBox, Slide } from "react-awesome-reveal";
+import { ConditionalWrapper } from "@/components/common";
 
 const { Text, Title } = Typography;
 
@@ -63,39 +64,44 @@ export const HeroSection = (props: Props) => {
         </div>
       </div>
 
-      <div className={styles["profile-img-wrapper"]}>
-        <Image src={Avatar} alt="avatar" width={240} height={240} />
-        <ul className={styles["list-icon"]}>
-          <li>
-            <Link href="https://facebook.com/nguyen.tr.thinh">
-              <a>
-                <FacebookIcon />
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href="https://linkedin.com/in/thinhngtruong">
-              <a>
-                <LinkedinIcon />
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href="mailto:thinh.ngtruong@gmail.com">
-              <a>
-                <GoogleOutlined />
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href="https://github.com/thinhngtruong">
-              <a>
-                <GithubOutlined />
-              </a>
-            </Link>
-          </li>
-        </ul>
-      </div>
+      <ConditionalWrapper
+        condition={!isMobile}
+        wrapper={(children) => <Slide direction="right">{children}</Slide>}
+      >
+        <div className={styles["profile-img-wrapper"]}>
+          <Image src={Avatar} alt="avatar" width={240} height={240} />
+          <ul className={styles["list-icon"]}>
+            <li>
+              <Link href="https://facebook.com/nguyen.tr.thinh">
+                <a>
+                  <FacebookIcon />
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="https://linkedin.com/in/thinhngtruong">
+                <a>
+                  <LinkedinIcon />
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="mailto:thinh.ngtruong@gmail.com">
+                <a>
+                  <GoogleOutlined />
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="https://github.com/thinhngtruong">
+                <a>
+                  <GithubOutlined />
+                </a>
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </ConditionalWrapper>
     </section>
   );
 };

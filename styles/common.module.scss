@@ -10,7 +10,7 @@
   }
 
   &-link-wrapper {
-    div {
+    div:not(:first-child) {
       transition: all 0.5s ease;
 
       &:hover {
@@ -102,6 +102,43 @@
   }
 }
 
+.theme-style-wrapper {
+  margin: 0 30px;
+}
+
+.theme-style-cb {
+  opacity: 0;
+  position: absolute;
+}
+
+.theme-style-lb {
+  width: 40px;
+  height: 20px;
+  background-color:#111;
+  display: flex;
+  border-radius:50px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  position: relative;
+  transform: scale(1.5);
+}
+
+.theme-style-ball {
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.theme-style-cb:checked + .theme-style-lb .theme-style-ball{
+  transform: translateX(20px);
+}
+
 @media only screen and (min-width: $breakpointDesktop) {
   .header-mobile {
     display: none;
@@ -161,6 +198,7 @@
   position: fixed;
   bottom: 10%;
   right: 30px;
+  z-index: 999999;
 
   @include round-btn(42px, 42px, 20px);
   &:hover {

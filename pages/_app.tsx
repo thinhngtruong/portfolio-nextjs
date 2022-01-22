@@ -1,8 +1,9 @@
 import axiosClient from "@/api/axios-client";
 import { EmptyLayout } from '@/components/layout';
 import { AppPropsWithLayout } from '@/models/common';
-import 'antd/dist/antd.css';
 import { SWRConfig } from "swr";
+import { ThemeProvider } from '@/components/context'
+import 'antd/dist/antd.css';
 import "@/styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
@@ -15,9 +16,11 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
         shouldRetryOnError: false,
       }}
     >
+      <ThemeProvider>
       <Layout>
         <Component {...pageProps} />
       </Layout>
+      </ThemeProvider>
     </SWRConfig>
   );
 }
