@@ -9,6 +9,7 @@ import MainBackground3 from "@/images/main-bg-3.png";
 import Lottie from "react-lottie";
 import * as animationData from "@/assets/86396-loading.json";
 import { isMobile } from "react-device-detect";
+import { isProduction } from "@/utils/index"
 
 const defaultOptions = {
   loop: true,
@@ -23,7 +24,9 @@ const LOADING_IMG_SIZE = isMobile ? 300 : 400;
 
 export function MainLayout({ children }: LayoutProps) {
   const [backToTop, setBackToTop] = useState(false);
-  const [isStopped, setIsStopped] = useState(false);
+  const [isShowLoading, setIsShowLoading] = useState(
+    isProduction() ? true : false
+  );
 
   const toggleVisible = () => {
     const scrolled = document.documentElement.scrollTop;
@@ -44,18 +47,24 @@ export function MainLayout({ children }: LayoutProps) {
   useEffect(() => {
     window.addEventListener("scroll", toggleVisible);
 
-    setTimeout(() => {
-      setIsStopped(true);
-    }, 3000);
+    if (isProduction()) {
+      setTimeout(() => {
+        setIsShowLoading(false);
+      }, 3000);
+    }
 
     return () => window.removeEventListener("scroll", toggleVisible);
   }, []);
 
   return (
     <>
-      {!isStopped ? (
+      {isShowLoading ? (
         <div style={{ display: "flex", alignItems: "center", height: "100vh" }}>
-          <Lottie options={defaultOptions} height={LOADING_IMG_SIZE} width={LOADING_IMG_SIZE} />
+          <Lottie
+            options={defaultOptions}
+            height={LOADING_IMG_SIZE}
+            width={LOADING_IMG_SIZE}
+          />
         </div>
       ) : (
         <div className={styles["main-wrapper"]}>

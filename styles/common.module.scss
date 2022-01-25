@@ -148,6 +148,7 @@
 }
 
 .footer {
+  z-index: 99999;
   margin-top: 50px;
   text-align: center;
   padding: 10px 0;
@@ -193,6 +194,7 @@
     padding-right: 15px;
     padding-left: 15px;
     width: 100%;
+    margin-top: 140px;
   }
 }
 
@@ -224,6 +226,10 @@
   .main-bg {
     top: 500px;
     left: -170px;
+  }
+
+  .container-md {
+    margin-top: 50px;
   }
 }
 
