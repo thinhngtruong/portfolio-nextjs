@@ -154,6 +154,10 @@
   padding: 10px 0;
   background: $gray;
   font-size: 13px;
+
+  .container-md {
+    margin-top: 0;
+  }
 }
 
 .main-wrapper {
@@ -194,7 +198,7 @@
     padding-right: 15px;
     padding-left: 15px;
     width: 100%;
-    margin-top: 140px;
+    margin-top: 90px;
   }
 }
 

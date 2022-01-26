@@ -1,11 +1,12 @@
 import axiosClient from "@/api/axios-client";
-import { EmptyLayout } from '@/components/layout';
-import { AppPropsWithLayout } from '@/models/common';
+import { EmptyLayout } from "@/components/layout";
+import { AppPropsWithLayout } from "@/models/common";
 import { SWRConfig } from "swr";
-import { AppProvider } from '@/components/context'
-import 'antd/dist/antd.css';
+import { AppProvider } from "@/components/context";
+import NextNProgress from "nextjs-progressbar";
+import "antd/dist/antd.css";
 import "@/styles/globals.css";
-import "@/styles/common.scss"
+import "@/styles/common.scss";
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   const Layout = Component.Layout ?? EmptyLayout;
@@ -18,9 +19,10 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
       }}
     >
       <AppProvider>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+        <Layout>
+          <NextNProgress options={{ showSpinner: false }}/>
+          <Component {...pageProps} />
+        </Layout>
       </AppProvider>
     </SWRConfig>
   );

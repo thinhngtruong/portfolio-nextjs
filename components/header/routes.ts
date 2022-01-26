@@ -1,12 +1,12 @@
 export const ROUTE_LIST = [
   {
-    label: "Home",
+    label: "About",
     path: "/",
   },
-  {
-    label: "Works",
-    path: "/works",
-  },
+  // {
+  //   label: "Works",
+  //   path: "/works",
+  // },
   {
     label: "Blog",
     path: "/blog",

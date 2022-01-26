@@ -7,6 +7,17 @@ export const ghostApi = new GhostContentAPI({
   version: "v4",
 });
 
+export const getFeaturedPosts = async () => {
+  return await ghostApi.posts
+    .browse({
+      limit: "all",
+      filter: "featured:true"
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+};
+
 export const getPosts = async () => {
   return await ghostApi.posts
     .browse({

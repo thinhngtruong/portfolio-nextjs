@@ -3,6 +3,7 @@
 body {
   background-color: $background-light;
   color: $primary-text-light;
+  overflow-x: hidden;
 }
 
 body.dark-mode {

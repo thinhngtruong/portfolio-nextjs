@@ -4,9 +4,11 @@ import {
   DARK_MODE,
   INIT_THEME_MODE,
   PERSIST_STATE,
+  DARK_MODE_CLASS,
 } from "@/constants/index";
 import commonStyles from "@/styles/common.module.scss";
 import homeStyles from "@/styles/home.module.scss";
+import blogStyles from "@/styles/blog.module.scss";
 
 export const AppContext = createContext<any>({} as any);
 
@@ -58,9 +60,10 @@ export const AppProvider = (props: AppProviderProps) => {
     }
     if (state.isDarkMode) {
       document.body.classList.add(
-        "dark-mode",
-        commonStyles["dark-mode"],
-        homeStyles["dark-mode"]
+        DARK_MODE_CLASS,
+        commonStyles[DARK_MODE_CLASS],
+        homeStyles[DARK_MODE_CLASS],
+        blogStyles[DARK_MODE_CLASS]
       );
     } else {
       document.body.removeAttribute("class");

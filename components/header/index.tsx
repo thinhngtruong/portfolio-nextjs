@@ -22,7 +22,7 @@ export const Header = (props: HeaderProps) => {
       <div className={styles["particles-wrapper"]}>
         <Particles
           id="tsparticles"
-          height="200px"
+          height="150px"
           width="100%"
           options={{
             fullScreen: { enable: false },

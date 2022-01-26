@@ -1,29 +1,39 @@
-import React from "react";
+import { getFeaturedPosts, getPosts } from "@/api/index";
+import { Post } from "@/components/blog";
 import { MainLayout } from "@/components/layout";
-import { GetStaticProps, GetStaticPropsContext } from "next";
-import { getPosts } from "@/api/index";
+import styles from "@/styles/blog.module.scss";
 import { PostOrPage } from "@tryghost/content-api";
-import Link from "next/link";
+import { GetStaticProps } from "next";
 
 interface BlogPageProps {
-  posts: Array<PostOrPage>;
+  posts: Array<PostOrPage & { visibility: string }>;
+  featuredPosts: Array<PostOrPage & { visibility: string }>;
 }
 
 const BlogPage = (props: BlogPageProps) => {
+  const { posts, featuredPosts } = props;
+
   return (
-    <div>
-      <h1>Blog page</h1>
-      <div>
-        <ul>
-          {props.posts.map((post) => (
-            <li key={post.id}>
-              <Link href={`/blog/${post.slug}`}>
-                <a> {post.title} </a>
-              </Link>
-            </li>
+    <div className={styles.blog}>
+      <h1 className={styles["blog-title"]}>Blog</h1>
+      <h2 className={styles["blog-description"]}>
+        A collection of posts I wrote about design process, technology and
+        productivity.
+      </h2>
+      <section>
+        <h3>Featured Posts</h3>
+        <div className={styles["featured-posts"]}>
+          {featuredPosts.map((post) => (
+            <Post key={post.id} post={post} isFeaturedPost={true} />
           ))}
-        </ul>
-      </div>
+        </div>
+      </section>
+      <section>
+        <h3>All Posts</h3>
+        {posts.map((post) => (
+          <Post key={post.id} post={post} isFeaturedPost={false} />
+        ))}
+      </section>
     </div>
   );
 };
@@ -31,7 +41,11 @@ const BlogPage = (props: BlogPageProps) => {
 BlogPage.Layout = MainLayout;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = await getPosts();
+  const [posts, featuredPosts] = await Promise.all([
+    getPosts(),
+    getFeaturedPosts(),
+  ]);
+
   if (!posts) {
     return {
       notFound: true,
@@ -39,7 +53,7 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 
   return {
-    props: { posts },
+    props: { posts, featuredPosts },
   };
 };
 
