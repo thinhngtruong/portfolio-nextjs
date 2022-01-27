@@ -19,13 +19,13 @@ const PostPage = (props: PostPageProps) => {
 };
 
 export const getStaticPaths = async () => {
-  const posts = await getPosts();
+  const posts = await getPosts(1);
 
   const paths = posts?.map((post: PostOrPage) => ({
     params: { slug: post.slug },
   }));
 
-  return { paths, fallback: false };
+  return { paths, fallback: 'blocking' };
 };
 
 export const getStaticProps = async (context: GetStaticPropsContext) => {
@@ -45,6 +45,7 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
 
   return {
     props: { post },
+    revalidate: 10
   };
 };
 

@@ -25,8 +25,10 @@ export const Post = (props: PostProps) => {
           className={styles["post-img"]}
           src={post.feature_image}
           width={isFeaturedPost ? 440 : 200}
-          height={isFeaturedPost ? 220 : 200}
+          height={isFeaturedPost ? 250 : 200}
           alt="Feature image"
+          blurDataURL={post.feature_image}
+          placeholder="blur"
         />
       ) : (
         <Image
@@ -36,7 +38,7 @@ export const Post = (props: PostProps) => {
           )}
           src={NoPhoto}
           width={isFeaturedPost ? 400 : 200}
-          height={isFeaturedPost ? 220 : 200}
+          height={isFeaturedPost ? 250 : 200}
           alt="Feature image"
         />
       )}

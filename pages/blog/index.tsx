@@ -1,5 +1,5 @@
 import { getFeaturedPosts, getPosts } from "@/api/index";
-import { Post } from "@/components/blog";
+import { Posts } from "@/components/blog";
 import { MainLayout } from "@/components/layout";
 import styles from "@/styles/blog.module.scss";
 import { PostOrPage } from "@tryghost/content-api";
@@ -23,16 +23,12 @@ const BlogPage = (props: BlogPageProps) => {
       <section>
         <h3>Featured Posts</h3>
         <div className={styles["featured-posts"]}>
-          {featuredPosts.map((post) => (
-            <Post key={post.id} post={post} isFeaturedPost={true} />
-          ))}
+          <Posts posts={featuredPosts} isFeaturedPost={true} />
         </div>
       </section>
       <section>
         <h3>All Posts</h3>
-        {posts.map((post) => (
-          <Post key={post.id} post={post} isFeaturedPost={false} />
-        ))}
+        <Posts posts={posts} isFeaturedPost={false} />
       </section>
     </div>
   );
@@ -42,8 +38,8 @@ BlogPage.Layout = MainLayout;
 
 export const getStaticProps: GetStaticProps = async () => {
   const [posts, featuredPosts] = await Promise.all([
-    getPosts(),
-    getFeaturedPosts(),
+    getPosts(1),
+    getFeaturedPosts(1),
   ]);
 
   if (!posts) {
@@ -54,6 +50,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: { posts, featuredPosts },
+    revalidate: 10
   };
 };
 
