@@ -65,8 +65,12 @@ export const AppProvider = (props: AppProviderProps) => {
         homeStyles[DARK_MODE_CLASS],
         blogStyles[DARK_MODE_CLASS]
       );
+      document
+        .querySelector("html")
+        ?.setAttribute("style", "color-scheme: dark");
     } else {
       document.body.removeAttribute("class");
+      document.querySelector("html")?.removeAttribute("style");
     }
   }, [state]);
 

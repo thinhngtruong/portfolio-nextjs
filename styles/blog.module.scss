@@ -1,7 +1,7 @@
 @import "./variables.scss";
 
 .blog h3 {
-  color: #8D9C9F;
+  color: #8d9c9f;
   font-size: 16px;
   margin-bottom: 30px;
   text-transform: uppercase;
@@ -39,7 +39,8 @@
     display: block;
     width: 48%;
 
-    .post-content, >span {
+    .post-content,
+    > span {
       width: 100%;
     }
 
@@ -49,6 +50,7 @@
 
     > span {
       width: unset !important;
+      margin: 15px 15px 0 !important;
     }
   }
 
@@ -74,8 +76,9 @@
     margin-left: 20px;
     padding: 10px 20px;
 
-    >p {
+    > p {
       margin-top: 10px;
+      font-size: 16px;
       overflow: hidden;
       text-overflow: ellipsis;
       display: -webkit-box;
@@ -116,6 +119,48 @@ div.post-info {
   font-size: 12px !important;
 }
 
+.post-page {
+  .back {
+    font-size: 16px;
+    margin-bottom: 20px;
+
+    &:hover {
+      color: $red;
+    }
+  }
+
+  .tags {
+    font-size: 14px;
+    color: #8d9c9f;
+  }
+
+  h1 {
+    font-size: 38px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+
+  hr {
+    background-color: #8d9c9f;
+    height: 1px;
+    border: 0;
+    opacity: 0.2;
+    margin-bottom: 20px;
+  }
+
+  .post-content {
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    p {
+      font-size: 16px;
+    }
+  }
+}
+
 .dark-mode {
   .blog-description {
     color: $primary-text-dark;
@@ -125,5 +170,9 @@ div.post-info {
   .post {
     background-color: $background-dark;
     opacity: 0.9;
+  }
+
+  .post-content > p {
+    opacity: 0.6;
   }
 }

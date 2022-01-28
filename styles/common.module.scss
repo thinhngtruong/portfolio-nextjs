@@ -167,7 +167,9 @@
 }
 
 .main-bg,
-.main-bg-3 {
+.main-bg-2,
+.main-bg-3,
+.main-bg-4 {
   position: absolute;
 }
 
@@ -175,9 +177,21 @@
   top: 100px;
 }
 
+.main-bg-2 {
+  top: 1200px;
+  right: -100px;
+}
+
 .main-bg-3 {
   top: 250px;
   right: 0;
+  z-index: -1;
+}
+
+.main-bg-4 {
+  top: 200px;
+  right: -185px;
+  transform: rotate(180deg) scale(0.5);
   z-index: -1;
 }
 
@@ -255,6 +269,6 @@
   }
 
   .footer {
-    background: #2B2B2B;
+    background: #2b2b2b;
   }
 }

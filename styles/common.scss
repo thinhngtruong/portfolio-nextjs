@@ -10,8 +10,11 @@ body.dark-mode {
   background-color: $background-dark;
   color: $primary-text-dark !important;
   overflow-x: hidden;
-  
-  a, div, span, h1 {
+
+  a,
+  div,
+  span,
+  h1 {
     color: $primary-text-dark !important;
   }
 }

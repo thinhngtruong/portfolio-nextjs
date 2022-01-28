@@ -17,8 +17,8 @@ const BlogPage = (props: BlogPageProps) => {
     <div className={styles.blog}>
       <h1 className={styles["blog-title"]}>Blog</h1>
       <h2 className={styles["blog-description"]}>
-        A collection of posts I wrote about design process, technology and
-        productivity.
+        A collection of posts I wrote about programming tutorials, awesome
+        technology and lessons learned.
       </h2>
       <section>
         <h3>Featured Posts</h3>
@@ -50,7 +50,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: { posts, featuredPosts },
-    revalidate: 10
+    revalidate: 10,
   };
 };
 

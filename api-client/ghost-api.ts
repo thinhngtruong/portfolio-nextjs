@@ -1,5 +1,5 @@
 import GhostContentAPI from "@tryghost/content-api";
-import { LIMIT_POSTS } from "@/constants/index";
+import { LIMIT_POSTS, LIMIT_FEATURED_POSTS } from "@/constants/index";
 
 // Create API instance with site credentials
 export const ghostApi = new GhostContentAPI({
@@ -11,7 +11,7 @@ export const ghostApi = new GhostContentAPI({
 export const getFeaturedPosts = async (page: number) => {
   return await ghostApi.posts
     .browse({
-      limit: LIMIT_POSTS,
+      limit: LIMIT_FEATURED_POSTS,
       filter: "featured:true",
       page,
     })
@@ -33,9 +33,7 @@ export const getPosts = async (page: number) => {
 
 export const getSinglePost = async (slug: string) => {
   return await ghostApi.posts
-    .read({
-      slug,
-    })
+    .read({ slug }, { formats: ["html"], include: "tags" })
     .catch((err) => {
       console.error(err);
     });

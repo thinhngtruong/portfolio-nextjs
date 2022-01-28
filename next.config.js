@@ -6,6 +6,6 @@ module.exports = {
     includePaths: [path.join(__dirname, 'styles')],
   },
   images: {
-    domains: ['static.ghost.org'],
+    domains: ['static.ghost.org', 'thinh-nguyen.ghost.io']
   },
 }

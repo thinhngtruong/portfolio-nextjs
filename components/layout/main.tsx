@@ -5,11 +5,13 @@ import { useEffect, useState } from "react";
 import { BackToTop } from "@/components/icons";
 import Image from "next/image";
 import MainBackground from "@/images/main-bg.png";
+import MainBackground2 from "@/images/main-bg-2.png";
 import MainBackground3 from "@/images/main-bg-3.png";
+import MainBackground4 from "@/images/main-bg-4.png";
 import Lottie from "react-lottie";
 import * as animationData from "@/assets/86396-loading.json";
 import { isMobile } from "react-device-detect";
-import { isProduction } from "@/utils/index"
+import { isProduction } from "@/utils/index";
 
 const defaultOptions = {
   loop: true,
@@ -21,6 +23,25 @@ const defaultOptions = {
 };
 
 const LOADING_IMG_SIZE = isMobile ? 300 : 400;
+
+const BACKGROUNDS = [
+  {
+    src: MainBackground,
+    isHidden: false,
+  },
+  {
+    src: MainBackground2,
+    isHidden: true,
+  },
+  {
+    src: MainBackground3,
+    isHidden: true,
+  },
+  {
+    src: MainBackground4,
+    isHidden: true,
+  },
+];
 
 export function MainLayout({ children }: LayoutProps) {
   const [backToTop, setBackToTop] = useState(false);
@@ -70,12 +91,19 @@ export function MainLayout({ children }: LayoutProps) {
         <div className={styles["main-wrapper"]}>
           <Header />
 
-          <div className={styles["main-bg"]}>
-            <Image src={MainBackground} alt="Main background"></Image>
-          </div>
-          <div className={styles["main-bg-3"]}>
-            <Image src={MainBackground3} alt="Main background"></Image>
-          </div>
+          {BACKGROUNDS.map(
+            (background, index) =>
+              !background.isHidden && (
+                <div
+                  key={index}
+                  className={
+                    styles[`main-bg${index === 0 ? "" : "-" + (index + 1)}`]
+                  }
+                >
+                  <Image src={background.src} alt="Main background"></Image>
+                </div>
+              )
+          )}
 
           <BackToTop
             onClick={scrollToTop}
