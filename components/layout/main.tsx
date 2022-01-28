@@ -10,8 +10,8 @@ import MainBackground3 from "@/images/main-bg-3.png";
 import MainBackground4 from "@/images/main-bg-4.png";
 import Lottie from "react-lottie";
 import * as animationData from "@/assets/86396-loading.json";
-import { isMobile } from "react-device-detect";
 import { isProduction } from "@/utils/index";
+import { useDeviceDetect } from "@/hooks/index";
 
 const defaultOptions = {
   loop: true,
@@ -21,8 +21,6 @@ const defaultOptions = {
     preserveAspectRatio: "xMidYMid slice",
   },
 };
-
-const LOADING_IMG_SIZE = isMobile ? 300 : 400;
 
 const BACKGROUNDS = [
   {
@@ -48,6 +46,7 @@ export function MainLayout({ children }: LayoutProps) {
   const [isShowLoading, setIsShowLoading] = useState(
     isProduction() ? true : false
   );
+  const { isMobile } = useDeviceDetect();
 
   const toggleVisible = () => {
     const scrolled = document.documentElement.scrollTop;
@@ -83,8 +82,8 @@ export function MainLayout({ children }: LayoutProps) {
         <div style={{ display: "flex", alignItems: "center", height: "100vh" }}>
           <Lottie
             options={defaultOptions}
-            height={LOADING_IMG_SIZE}
-            width={LOADING_IMG_SIZE}
+            height={isMobile ? 300 : 400}
+            width={isMobile ? 300 : 400}
           />
         </div>
       ) : (

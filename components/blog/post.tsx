@@ -3,6 +3,7 @@ import styles from "@/styles/blog.module.scss";
 import { PostOrPage } from "@tryghost/content-api";
 import classnames from "classnames";
 import { format } from "date-fns";
+import { useDeviceDetect } from "@/hooks/index";
 import Image from "next/image";
 import Link from "next/link";
 import TimeAgo from "react-timeago";
@@ -14,18 +15,20 @@ type PostProps = {
 
 export const Post = (props: PostProps) => {
   const { post, isFeaturedPost } = props;
+  const { isMobile } = useDeviceDetect();
+
   return (
     <article
       className={classnames(styles.post, {
-        [styles["featured-post"]]: isFeaturedPost,
+        [styles["featured-post"]]: isFeaturedPost || isMobile,
       })}
     >
       {post.feature_image ? (
         <Image
           className={styles["post-img"]}
           src={post.feature_image}
-          width={isFeaturedPost ? 440 : 200}
-          height={isFeaturedPost ? 250 : 200}
+          width={isFeaturedPost || isMobile ? 440 : 200}
+          height={isFeaturedPost || isMobile ? 250 : 200}
           alt="Feature image"
           blurDataURL={post.feature_image}
           placeholder="blur"
@@ -37,8 +40,8 @@ export const Post = (props: PostProps) => {
             styles["post-img-no-photo"]
           )}
           src={NoPhoto}
-          width={isFeaturedPost ? 400 : 200}
-          height={isFeaturedPost ? 250 : 200}
+          width={isFeaturedPost || isMobile ? 400 : 200}
+          height={isFeaturedPost || isMobile ? 250 : 200}
           alt="Feature image"
         />
       )}

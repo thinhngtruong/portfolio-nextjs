@@ -131,7 +131,9 @@ div.post-info {
 
   .tags {
     font-size: 14px;
-    color: #8d9c9f;
+    background-color: #f3f4f6;
+    padding: 5px;
+    color: #4b5563;
   }
 
   h1 {
@@ -154,7 +156,7 @@ div.post-info {
       max-width: 100%;
       height: auto;
     }
-    
+
     p {
       font-size: 16px;
     }
@@ -174,5 +176,15 @@ div.post-info {
 
   .post-content > p {
     opacity: 0.6;
+  }
+}
+
+@media only screen and (max-width: $breakpointMobile) {
+  .post.featured-post {
+    width: 100%;
+  }
+
+  .blog section {
+    margin-bottom: 50px;
   }
 }

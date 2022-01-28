@@ -8,17 +8,18 @@ import {
 import { Button, Typography } from "antd";
 import Image from "next/image";
 import Link from "next/link";
-import { isMobile } from "react-device-detect";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import { FacebookIcon, LinkedinIcon } from "@/components/icons";
 import { Fade, JackInTheBox, Slide } from "react-awesome-reveal";
 import { ConditionalWrapper } from "@/components/common";
+import { useDeviceDetect } from "@/hooks/index";
 
 const { Text, Title } = Typography;
 
 interface Props {}
 
 export const HeroSection = (props: Props) => {
+  const { isMobile } = useDeviceDetect();
   const { text } = useTypewriter({
     words: isMobile ? ["Hello, I'm Thinh,"] : ["Hello, I am Thinh Nguyen,"],
     typeSpeed: 80,
