@@ -125,7 +125,7 @@ div.post-info {
     margin-bottom: 20px;
 
     &:hover {
-      color: $red;
+      color: $red !important;
     }
   }
 
@@ -176,6 +176,10 @@ div.post-info {
 
   .post-content > p {
     opacity: 0.6;
+  }
+
+  .post-page .tags {
+    background: unset;
   }
 }
 

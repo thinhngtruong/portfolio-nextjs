@@ -4,25 +4,30 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useRef } from "react";
 import { ROUTE_LIST } from "./routes";
+import { ThemeStyle } from "./theme-style";
 
-export interface HeaderMobileProps {}
+export interface HeaderMobileProps {
+  isDarkMode: boolean;
+  handleChangeThemeStyle: () => void;
+}
 
-const Header = (props: HeaderMobileProps) => {
-  const menuRef = useRef<HTMLAnchorElement>(null);
+const Header = ({ isDarkMode, handleChangeThemeStyle }: HeaderMobileProps) => {
+  const menuBtnRef = useRef<HTMLAnchorElement>(null);
+  const mainMenuRef = useRef<HTMLElement>(null);
   const router = useRouter();
 
   const handleClickMenu = () => {
-    const menuBtn = menuRef?.current;
-    const mainMenu = document.querySelectorAll("." + styles["main-menu"])[0];
+    const menuBtn = menuBtnRef?.current;
+    const mainMenu = mainMenuRef?.current;
     let body = document.querySelector("body");
     menuBtn?.classList.toggle(styles.act);
     if (menuBtn?.classList?.contains(styles.act)) {
-      mainMenu.classList.add(styles.act);
+      mainMenu?.classList.add(styles.act);
       if (body?.style) {
         body.style.overflow = "hidden";
       }
     } else {
-      mainMenu.classList.remove(styles.act);
+      mainMenu?.classList.remove(styles.act);
       if (body?.style) {
         body.style.overflow = "";
       }
@@ -30,7 +35,7 @@ const Header = (props: HeaderMobileProps) => {
   };
 
   const handleCloseMenu = () => {
-    const menuBtn = menuRef?.current;
+    const menuBtn = menuBtnRef?.current;
     const mainMenu = document.querySelectorAll("." + styles["main-menu"])[0];
     let body = document.querySelector("body");
     menuBtn?.classList.remove(styles.act);
@@ -49,15 +54,19 @@ const Header = (props: HeaderMobileProps) => {
           <span>Thinh</span> <span>Nguyen</span>
         </a>
       </Link>
+      <ThemeStyle
+        isDarkMode={isDarkMode}
+        handleChangeThemeStyle={handleChangeThemeStyle}
+      />
       <a
         href="#"
         className={styles["menu-btn"]}
         onClick={handleClickMenu}
-        ref={menuRef}
+        ref={menuBtnRef}
       >
         <span className={styles.lines}></span>
       </a>
-      <nav className={styles["main-menu"]}>
+      <nav className={styles["main-menu"]} ref={mainMenuRef}>
         <ul onClick={handleCloseMenu}>
           {ROUTE_LIST.map((route, index) => (
             <li key={route.path + index}>

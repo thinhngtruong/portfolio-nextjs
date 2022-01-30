@@ -1,10 +1,10 @@
-import { Moon, Sun } from "@/components/icons";
 import styles from "@/styles/common.module.scss";
 import { Space } from "antd";
 import classnames from "classnames";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { ROUTE_LIST } from "./routes";
+import { ThemeStyle } from "./theme-style";
 
 export interface HeaderDesktopProps {
   isDarkMode: boolean;
@@ -24,20 +24,10 @@ const Header = ({ isDarkMode, handleChangeThemeStyle }: HeaderDesktopProps) => {
         </a>
       </Link>
       <Space className={styles["header-link-wrapper"]}>
-        <div className={styles["theme-style-wrapper"]}>
-          <input
-            checked={isDarkMode ? true : false}
-            type="checkbox"
-            className={styles["theme-style-cb"]}
-            id="checkbox"
-            onChange={handleChangeThemeStyle}
-          />
-          <label htmlFor="checkbox" className={styles["theme-style-lb"]}>
-            <Moon />
-            <Sun />
-            <div className={styles["theme-style-ball"]}></div>
-          </label>
-        </div>
+        <ThemeStyle
+          isDarkMode={isDarkMode}
+          handleChangeThemeStyle={handleChangeThemeStyle}
+        />
         {ROUTE_LIST.map((route, index) => (
           <Link key={route.path + index} href={route.path} passHref>
             <a

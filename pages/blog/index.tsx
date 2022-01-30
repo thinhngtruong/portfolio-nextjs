@@ -4,6 +4,7 @@ import { MainLayout } from "@/components/layout";
 import styles from "@/styles/blog.module.scss";
 import { PostOrPage } from "@tryghost/content-api";
 import { GetStaticProps } from "next";
+import { Fade, JackInTheBox, Slide } from "react-awesome-reveal";
 
 interface BlogPageProps {
   posts: Array<PostOrPage & { visibility: string }>;
@@ -15,19 +16,27 @@ const BlogPage = (props: BlogPageProps) => {
 
   return (
     <div className={styles.blog}>
-      <h1 className={styles["blog-title"]}>Blog</h1>
-      <h2 className={styles["blog-description"]}>
-        A collection of posts I wrote about programming tutorials, awesome
-        technology and lessons learned.
-      </h2>
+      <Fade>
+        <h1 className={styles["blog-title"]}>Blog</h1>
+      </Fade>
+      <Fade delay={500}>
+        <h2 className={styles["blog-description"]}>
+          A collection of posts I wrote about programming tutorials, awesome
+          technology and lessons learned.
+        </h2>
+      </Fade>
       <section>
-        <h3>Featured Posts</h3>
+        <Slide direction="left" delay={500}>
+          <h3>Featured Posts</h3>
+        </Slide>
         <div className={styles["featured-posts"]}>
           <Posts posts={featuredPosts} isFeaturedPost={true} />
         </div>
       </section>
       <section>
-        <h3>All Posts</h3>
+        <Slide direction="left">
+          <h3>All Posts</h3>
+        </Slide>
         <Posts posts={posts} isFeaturedPost={false} />
       </section>
     </div>

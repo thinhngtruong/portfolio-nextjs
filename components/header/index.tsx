@@ -44,6 +44,7 @@ export const Header = (props: HeaderProps) => {
                 },
                 resize: true,
               },
+              detect_on: "canvas",
               modes: {
                 bubble: {
                   distance: 400,
@@ -104,7 +105,10 @@ export const Header = (props: HeaderProps) => {
           }}
         />
       </div>
-      <HeaderMobile />
+      <HeaderMobile
+        handleChangeThemeStyle={handleChangeThemeStyle}
+        isDarkMode={isDarkMode}
+      />
       <HeaderDesktop
         handleChangeThemeStyle={handleChangeThemeStyle}
         isDarkMode={isDarkMode}

@@ -40,7 +40,7 @@ export const HeroSection = (props: Props) => {
           </Title>
         </JackInTheBox>
         <div className={styles.description}>
-          <Fade delay={700}>
+          <Fade delay={500}>
             <Text>
               {`I have a huge passion on state-of-the-art technology and
                 people communication. I'm on my way with energy of youth, great
@@ -57,7 +57,7 @@ export const HeroSection = (props: Props) => {
           </Fade>
         </div>
         <div className={styles["download-cv-btn"]}>
-          <Fade delay={1000}>
+          <Fade delay={700}>
             <Button size="large" icon={<DownloadOutlined />}>
               Download My CV
             </Button>
