@@ -2,13 +2,13 @@
 
 A portfolio website and a collection of posts I wrote about programming tutorials, awesome technology and lessons learned.
 
-<p align="center">
+<!-- <p align="center">
   <img alt="Stars" src="https://badgen.net/github/stars/thinhngtruong/portfolio-nextjs">
   <img alt="Forks" src="https://badgen.net/github/forks/thinhngtruong/portfolio-nextjs">
   <img alt="Issues" src="https://badgen.net/github/issues/thinhngtruong/portfolio-nextjs">
   <img alt="Commits" src="https://badgen.net/github/commits/thinhngtruong/portfolio-nextjs">
 </p>
-
+ -->
 ## Live demo
 
 Official Website: [https://thedots.site](https://thedots.site)
@@ -37,9 +37,12 @@ Official Website: [https://thedots.site](https://thedots.site)
 ## Previews
 ![Preview 1](https://res.cloudinary.com/dcls8hwlu/image/upload/v1644077549/Screen_Shot_2022-02-05_at_22.31.08_jvpz3i.png)
 
+
 ![Preview 2](https://res.cloudinary.com/dcls8hwlu/image/upload/v1644077263/Screen_Shot_2022-02-05_at_22.31.17_piq6mc.png)
 
+
 ![Preview 3](https://res.cloudinary.com/dcls8hwlu/image/upload/v1644077262/Screen_Shot_2022-02-05_at_22.31.40_hj7sld.png)
+
 
 ![Preview 4](https://res.cloudinary.com/dcls8hwlu/image/upload/v1644077263/Screen_Shot_2022-02-05_at_22.31.53_wtndbi.png)
 
