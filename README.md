@@ -35,10 +35,13 @@ Official Website: [https://thedots.site](https://thedots.site)
 - Clone .env.exmample, rename it to .env and update the file contents
 
 ## Previews
-![Preview 1](https://res.cloudinary.com/dcls8hwlu/image/upload/v1644077262/Screen_Shot_2022-02-05_at_22.31.08_jvpz3i.png)
-![Preview 1](https://res.cloudinary.com/dcls8hwlu/image/upload/v1644077263/Screen_Shot_2022-02-05_at_22.31.17_piq6mc.png)
-![Preview 1](https://res.cloudinary.com/dcls8hwlu/image/upload/v1644077262/Screen_Shot_2022-02-05_at_22.31.40_hj7sld.png)
-![Preview 1](https://res.cloudinary.com/dcls8hwlu/image/upload/v1644077263/Screen_Shot_2022-02-05_at_22.31.53_wtndbi.png)
+![Preview 1](https://res.cloudinary.com/dcls8hwlu/image/upload/v1644077549/Screen_Shot_2022-02-05_at_22.31.08_jvpz3i.png)
+
+![Preview 2](https://res.cloudinary.com/dcls8hwlu/image/upload/v1644077263/Screen_Shot_2022-02-05_at_22.31.17_piq6mc.png)
+
+![Preview 3](https://res.cloudinary.com/dcls8hwlu/image/upload/v1644077262/Screen_Shot_2022-02-05_at_22.31.40_hj7sld.png)
+
+![Preview 4](https://res.cloudinary.com/dcls8hwlu/image/upload/v1644077263/Screen_Shot_2022-02-05_at_22.31.53_wtndbi.png)
 
 ## Summary
 
