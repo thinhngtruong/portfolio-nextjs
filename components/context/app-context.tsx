@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useReducer } from "react";
+import { type ReactElement, createContext, useEffect, useReducer } from "react";
 import {
   LIGHT_MODE,
   DARK_MODE,
@@ -33,7 +33,7 @@ const appReducer = (
 };
 
 type AppProviderProps = {
-  children: React.ReactElement;
+  children: ReactElement;
 };
 
 export const AppProvider = (props: AppProviderProps) => {

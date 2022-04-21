@@ -1,9 +1,9 @@
-import React from "react";
+import type { ReactElement } from "react";
 
 type ConditionalWrapperProps = {
   condition: boolean;
-  wrapper: (children: React.ReactElement) => React.ReactElement;
-  children: React.ReactElement;
+  wrapper: (children: ReactElement) => ReactElement;
+  children: ReactElement;
 };
 
 export const ConditionalWrapper = ({
